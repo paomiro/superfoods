@@ -204,7 +204,8 @@ body {
 .rabbit-illustration {
     width: 80px;
     height: 80px;
-    animation: rabbitBounce 2s ease-in-out infinite;
+    animation: rabbitBounce 3s ease-in-out infinite;
+    animation-delay: 0.5s;
 }
 
 .rabbit-svg {
@@ -214,17 +215,29 @@ body {
 }
 
 @keyframes rabbitBounce {
-    0%, 100% {
-        transform: translateY(0px) rotate(0deg);
+    0% {
+        transform: translateY(0px) rotate(0deg) scale(1);
     }
-    25% {
-        transform: translateY(-5px) rotate(-2deg);
+    15% {
+        transform: translateY(-8px) rotate(-1deg) scale(1.05);
     }
-    50% {
-        transform: translateY(-10px) rotate(0deg);
+    30% {
+        transform: translateY(-20px) rotate(0deg) scale(1.1);
+    }
+    45% {
+        transform: translateY(-25px) rotate(1deg) scale(1.15);
+    }
+    60% {
+        transform: translateY(-15px) rotate(0deg) scale(1.1);
     }
     75% {
-        transform: translateY(-5px) rotate(2deg);
+        transform: translateY(-5px) rotate(-1deg) scale(1.05);
+    }
+    90% {
+        transform: translateY(-2px) rotate(0deg) scale(1.02);
+    }
+    100% {
+        transform: translateY(0px) rotate(0deg) scale(1);
     }
 }
 

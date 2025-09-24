@@ -1,3 +1,57 @@
+// Carrusel de imágenes
+let currentSlideIndex = 0;
+const slides = document.querySelectorAll('.carousel-slide');
+const dots = document.querySelectorAll('.dot');
+
+function showSlide(index) {
+    // Ocultar todas las slides
+    slides.forEach(slide => slide.classList.remove('active'));
+    dots.forEach(dot => dot.classList.remove('active'));
+    
+    // Mostrar la slide actual
+    if (slides[index]) {
+        slides[index].classList.add('active');
+        dots[index].classList.add('active');
+    }
+}
+
+function changeSlide(direction) {
+    currentSlideIndex += direction;
+    
+    if (currentSlideIndex >= slides.length) {
+        currentSlideIndex = 0;
+    } else if (currentSlideIndex < 0) {
+        currentSlideIndex = slides.length - 1;
+    }
+    
+    showSlide(currentSlideIndex);
+}
+
+function currentSlide(index) {
+    currentSlideIndex = index - 1;
+    showSlide(currentSlideIndex);
+}
+
+// Auto-play del carrusel
+function autoPlay() {
+    changeSlide(1);
+}
+
+// Iniciar auto-play cada 5 segundos
+let autoPlayInterval = setInterval(autoPlay, 5000);
+
+// Pausar auto-play al hacer hover
+const carouselSection = document.querySelector('.carousel-section');
+if (carouselSection) {
+    carouselSection.addEventListener('mouseenter', () => {
+        clearInterval(autoPlayInterval);
+    });
+    
+    carouselSection.addEventListener('mouseleave', () => {
+        autoPlayInterval = setInterval(autoPlay, 5000);
+    });
+}
+
 // Efectos de scroll y animaciones
 document.addEventListener('DOMContentLoaded', function() {
     
@@ -244,44 +298,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Efecto de cursor personalizado (opcional)
-    const cursor = document.createElement('div');
-    cursor.className = 'custom-cursor';
-    cursor.style.cssText = `
-        position: fixed;
-        width: 20px;
-        height: 20px;
-        background: rgba(102, 126, 234, 0.5);
-        border-radius: 50%;
-        pointer-events: none;
-        z-index: 9999;
-        transition: transform 0.1s ease;
-        display: none;
-    `;
-    document.body.appendChild(cursor);
-    
-    document.addEventListener('mousemove', (e) => {
-        cursor.style.left = e.clientX - 10 + 'px';
-        cursor.style.top = e.clientY - 10 + 'px';
-        cursor.style.display = 'block';
-    });
-    
-    document.addEventListener('mouseleave', () => {
-        cursor.style.display = 'none';
-    });
-    
-    // Efecto de cursor en productos
-    productItems.forEach(item => {
-        item.addEventListener('mouseenter', () => {
-            cursor.style.transform = 'scale(2)';
-            cursor.style.background = 'rgba(102, 126, 234, 0.8)';
-        });
-        
-        item.addEventListener('mouseleave', () => {
-            cursor.style.transform = 'scale(1)';
-            cursor.style.background = 'rgba(102, 126, 234, 0.5)';
-        });
-    });
     
     console.log('🎨 Página de cremas cargada con efectos de scroll infinito y animaciones');
 });

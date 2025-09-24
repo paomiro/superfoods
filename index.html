@@ -8,6 +8,32 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Image Carousel -->
+    <section class="carousel-section">
+        <div class="carousel-container">
+            <div class="carousel-slides">
+                <div class="carousel-slide active">
+                    <img src="images/hero-mandarinas.png" alt="Hero Mandarinas" class="carousel-image">
+                </div>
+                <div class="carousel-slide">
+                    <img src="images/hero-vainilla.png" alt="Hero Vainilla" class="carousel-image">
+                </div>
+                <div class="carousel-slide">
+                    <img src="images/hero-lavanda.png" alt="Hero Lavanda" class="carousel-image">
+                </div>
+            </div>
+            <div class="carousel-dots">
+                <span class="dot active" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
+            <div class="carousel-nav">
+                <button class="carousel-prev" onclick="changeSlide(-1)">❮</button>
+                <button class="carousel-next" onclick="changeSlide(1)">❯</button>
+            </div>
+        </div>
+    </section>
+
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
@@ -15,7 +41,7 @@
                 <img src="images/imagenes:logo.png" alt="NATURE & BEAUTY Superfoods Logo" class="logo-image">
             </div>
             <h1 class="hero-title">Superfoods</h1>
-            <p class="hero-subtitle">Loción Corporal Nutritiva - Alimento para tu piel</p>
+            <p class="hero-subtitle">Loción Corporal Nutritiva</p>
             <div class="scroll-indicator">
                 <span>Desliza para explorar</span>
                 <div class="scroll-arrow"></div>
@@ -40,11 +66,15 @@
                         <p>85% ingredientes naturales en cada producto</p>
                     </div>
                     <div class="feature">
-                        <h3>Productos Hipoalergénicos</h3>
-                        <p>Formulados para todo tipo de piel</p>
+                        <h3>Sin Parabenos</h3>
+                        <p>Para cuidar tu piel</p>
                     </div>
                     <div class="feature">
-                        <h3>Sin Crueldad Animal</h3>
+                        <h3>Hipoalargénico</h3>
+                        <p>Sin riesgo de reacciones alérgicas</p>
+                    </div>
+                    <div class="feature">
+                        <h3>Sin Crueldad</h3>
                         <p>Comprometidos con el bienestar animal</p>
                     </div>
                     <div class="feature">
@@ -66,7 +96,7 @@
                 </div>
             </div>
             <div class="product-content">
-                <h2 class="product-title">PURIZING DETOX</h2>
+                <h2 class="product-title">RELAJACIÓN INTENSA</h2>
                 <p class="product-subtitle">Extracto de Moringa y Vainilla Mexicana</p>
                 <p class="product-description">
                     Una loción corporal nutritiva que combina el poder desintoxicante de la moringa 
@@ -93,7 +123,7 @@
                 </div>
             </div>
             <div class="product-content">
-                <h2 class="product-title">ANTIOXIDANT BOOST</h2>
+                <h2 class="product-title">UN BOOST DE HIDRATACIÓN</h2>
                 <p class="product-subtitle">Ginseng y Lavanda Francesa</p>
                 <p class="product-description">
                     Descubre la calma y serenidad con nuestra loción corporal que combina 

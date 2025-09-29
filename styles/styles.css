@@ -194,7 +194,7 @@ body {
 }
 
 .hero-title {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Aileron', 'Playfair Display', serif;
     font-size: 4rem;
     font-weight: 700;
     color: #2c3e50;
@@ -323,7 +323,7 @@ body {
 }
 
 .section-title {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Aileron', 'Playfair Display', serif;
     font-size: 3rem;
     color: #2c3e50;
     margin-bottom: 2rem;
@@ -386,7 +386,7 @@ body {
 }
 
 .feature h3 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Aileron', 'Playfair Display', serif;
     font-size: 1.5rem;
     color: #2c3e50;
     margin-bottom: 1rem;
@@ -508,7 +508,7 @@ body {
 }
 
 .product-title {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Aileron', 'Playfair Display', serif;
     font-size: 3rem;
     color: #2c3e50;
     margin-bottom: 0.5rem;
@@ -531,7 +531,7 @@ body {
 }
 
 .product-benefits h3 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Aileron', 'Playfair Display', serif;
     font-size: 1.5rem;
     color: #2c3e50;
     margin-bottom: 1rem;

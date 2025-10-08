@@ -6,6 +6,7 @@
     <title>Superfoods - Loción Corporal Nutritiva</title>
     <link rel="stylesheet" href="styles/styles.css">
     <link href="https://fonts.cdnfonts.com/css/aileron" rel="stylesheet">
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -14,13 +15,13 @@
         <div class="carousel-container">
             <div class="carousel-slides">
                 <div class="carousel-slide active">
-                    <img src="images/hero-mandarinas.png" alt="Hero Mandarinas" class="carousel-image">
+                    <img src="images/hero-mandarinas.jpeg" alt="Hero Mandarinas" class="carousel-image">
                 </div>
                 <div class="carousel-slide">
-                    <img src="images/hero-vainilla.png" alt="Hero Vainilla" class="carousel-image">
+                    <img src="images/hero-vainilla.jpeg" alt="Hero Vainilla" class="carousel-image">
                 </div>
                 <div class="carousel-slide">
-                    <img src="images/hero-lavanda.png" alt="Hero Lavanda" class="carousel-image">
+                    <img src="images/hero-lavanda.jpeg" alt="Hero Lavanda" class="carousel-image">
                 </div>
             </div>
             <div class="carousel-dots">
@@ -32,6 +33,23 @@
                 <button class="carousel-prev" onclick="changeSlide(-1)">❮</button>
                 <button class="carousel-next" onclick="changeSlide(1)">❯</button>
             </div>
+        </div>
+    </section>
+
+    <!-- Goji 3D Model Preview -->
+    <section class="model3d-section" aria-label="Vista 3D Goji">
+        <div class="model3d-wrap">
+            <model-viewer id="goji3d" src="images/goji.glb"
+                          alt="Goji Body Lotion 3D"
+                          class="model3d-viewer"
+                          camera-controls
+                          auto-rotate
+                          rotation-per-second="20deg"
+                          disable-zoom
+                          shadow-intensity="0.7"
+                          exposure="1.0"
+                          interaction-prompt-threshold="1000">
+            </model-viewer>
         </div>
     </section>
 
@@ -86,6 +104,23 @@
             <div class="scroll-indicator">
                 <span>Desliza para explorar</span>
                 <div class="scroll-arrow"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trio Animated Bottles Section -->
+    <section class="trio-section" aria-label="Animación de tres cremas">
+        <div class="trio-stage">
+            <div class="trio-ring" id="trioRing">
+                <div class="trio-item is-left" data-index="0">
+                    <img src="images/moringa-vainilla.png" alt="Moringa y Vainilla" class="trio-img">
+                </div>
+                <div class="trio-item is-front" data-index="1">
+                    <img src="images/ginseng-lavanda.png" alt="Ginseng y Lavanda" class="trio-img">
+                </div>
+                <div class="trio-item is-right" data-index="2">
+                    <img src="images/goji-mandarina.png" alt="Goji y Mandarina" class="trio-img">
+                </div>
             </div>
         </div>
     </section>

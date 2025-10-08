@@ -301,3 +301,50 @@ document.addEventListener('DOMContentLoaded', function() {
     
     console.log('🎨 Página de cremas cargada con efectos de scroll infinito y animaciones');
 });
+
+// Rotación 3D de trio de cremas
+(function() {
+    const ring = document.getElementById('trioRing');
+    if (!ring) return;
+
+    let currentFace = 1; // comienza con la del medio (índice 1)
+    function updateRing() {
+        // 0->face 0 (moringa), 1->face 1 (ginseng), 2->face 2 (goji)
+        const deg = currentFace * -120; // girar en pasos de 120° para traer la siguiente al frente
+        ring.style.transform = `translate(-50%, -50%) rotateY(${deg}deg)`;
+        ring.classList.remove('front-0','front-1','front-2');
+        ring.classList.add(`front-${currentFace}`);
+    }
+
+    // auto-rotación cada 4s
+    setInterval(() => {
+        currentFace = (currentFace + 1) % 3;
+        updateRing();
+    }, 4000);
+
+    // iniciar estado inicial
+    updateRing();
+})();
+
+// Overlay de etiqueta en model-viewer (2D HUD)
+(function() {
+    const viewer = document.getElementById('goji3d');
+    if (!viewer) return;
+
+    // Crear contenedor de etiqueta HTML (HUD)
+    const tag = document.createElement('div');
+    tag.className = 'model-label';
+    tag.innerHTML = '<strong>HYDRATING SHOT</strong><br/><span>Goji Berry & Spaniard Tangerine</span>';
+    // Insertar justo después del viewer y posicionarlo absoluto relativo al wrapper
+    viewer.parentElement.style.position = 'relative';
+    viewer.parentElement.appendChild(tag);
+
+    function positionLabel() {
+        // Posicionar la etiqueta en esquina inferior derecha del canvas del viewer
+        const rect = viewer.getBoundingClientRect();
+        tag.style.left = (rect.width - 220 - 20) + 'px';
+        tag.style.top = (rect.height - 90 - 20) + 'px';
+    }
+    positionLabel();
+    window.addEventListener('resize', positionLabel);
+})();

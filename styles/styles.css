@@ -19,35 +19,43 @@ body {
 
 /* Carousel Section */
 .carousel-section {
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     position: relative;
     overflow: hidden;
+    margin: 0;
+    padding: 0;
 }
 
 .carousel-container {
     position: relative;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
 }
 
 .carousel-slides {
     position: relative;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
 }
 
 .carousel-slide {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     opacity: 0;
     transition: opacity 1s ease-in-out;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin: 0;
+    padding: 0;
 }
 
 .carousel-slide.active {
@@ -55,10 +63,12 @@ body {
 }
 
 .carousel-image {
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     object-fit: cover;
     object-position: center;
+    min-width: 100%;
+    min-height: 100%;
 }
 
 .carousel-dots {
@@ -425,8 +435,8 @@ body {
 }
 
 .product-bottle {
-    width: 520px;
-    height: 650px;
+    width: 676px;
+    height: 845px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -565,8 +575,129 @@ body {
     padding: 2rem 0;
 }
 
+/* Trio Animated Bottles */
+.trio-section {
+    position: relative;
+    padding: 120px 0 80px;
+    background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(44,62,80,0.03) 100%);
+}
+
+/* Single 3D model section */
+.model3d-section {
+    padding: 80px 0;
+    background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(44,62,80,0.04) 100%);
+}
+
+.model3d-wrap {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.model3d-viewer {
+    width: 100%;
+    height: 70vh;
+    border-radius: 16px;
+    background: radial-gradient(ellipse at center, #ffffff 0%, #f5f6f8 60%, #eef1f5 100%);
+    --progress-bar-color: transparent;
+    --poster-color: transparent;
+}
+
+.model-label {
+    position: absolute;
+    width: 220px;
+    height: 90px;
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: blur(6px);
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    padding: 12px 16px;
+    color: #2c3e50;
+    line-height: 1.3;
+    pointer-events: none;
+    font-family: 'Inter', sans-serif;
+}
+
+.model-label strong {
+    font-family: 'Aileron', 'Playfair Display', serif;
+    font-size: 1rem;
+}
+
+.model-label span {
+    font-size: 0.85rem;
+    color: #555;
+}
+
+.trio-stage {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 820px;
+    perspective: 1800px;
+}
+
+.trio-ring {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotateY(0deg);
+    transform-style: preserve-3d;
+    width: 900px;
+    height: 720px;
+    transition: transform 1.2s cubic-bezier(.22,.61,.36,1);
+}
+
+.trio-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 520px;
+    height: 700px;
+    transform-origin: center center;
+    display: grid;
+    place-items: center;
+}
+
+.trio-img {
+    max-height: 100%;
+    width: auto;
+    filter: drop-shadow(0 25px 45px rgba(0,0,0,0.25));
+}
+
+/* Posiciones del anillo (tres lados: 0°, 120°, 240°) */
+.trio-item[data-index="0"] { transform: rotateY(0deg) translateZ(650px); }
+.trio-item[data-index="1"] { transform: rotateY(120deg) translateZ(650px); }
+.trio-item[data-index="2"] { transform: rotateY(240deg) translateZ(650px); }
+
+/* Resalte del frente */
+.trio-ring.front-0 .trio-item[data-index="0"],
+.trio-ring.front-1 .trio-item[data-index="1"],
+.trio-ring.front-2 .trio-item[data-index="2"] {
+    filter: drop-shadow(0 35px 65px rgba(0,0,0,0.35));
+}
+
+@media (max-width: 1024px) {
+    .trio-stage { height: 680px; }
+    .trio-ring { width: 760px; height: 600px; }
+    .trio-item { width: 440px; height: 600px; }
+    .trio-item[data-index="0"],
+    .trio-item[data-index="1"],
+    .trio-item[data-index="2"] { transform: translateZ(520px); }
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
+    .trio-stage {
+        height: 520px;
+    }
+    .trio-bottle {
+        height: 52vh;
+    }
+    .bottle-left { left: 5%; }
+    .bottle-right { right: 5%; }
     .carousel-nav {
         padding: 0 15px;
     }
@@ -620,8 +751,8 @@ body {
     }
     
     .product-bottle {
-        width: 390px;
-        height: 520px;
+        width: 507px;
+        height: 676px;
     }
     
     .product-title {
@@ -638,6 +769,8 @@ body {
 }
 
 @media (max-width: 480px) {
+    .trio-stage { height: 420px; }
+    .trio-bottle { height: 46vh; }
     .title-container {
         gap: 10px;
     }
@@ -656,8 +789,8 @@ body {
     }
     
     .product-bottle {
-        width: 325px;
-        height: 455px;
+        width: 423px;
+        height: 592px;
     }
     
     .product-title {

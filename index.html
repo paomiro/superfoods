@@ -9,14 +9,51 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="#home">Superfoods</a>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="#historia" class="nav-link">Historia</a>
+                <div class="dropdown">
+                    <a href="#beneficios" class="nav-link dropdown-toggle">Nuestros beneficios</a>
+                    <div class="dropdown-menu">
+                        <a href="#ingredientes-naturales" class="dropdown-item">Ingredientes Naturales</a>
+                        <a href="#sin-parabenos" class="dropdown-item">Sin Parabenos</a>
+                        <a href="#productos-hipoalergenicos" class="dropdown-item">Productos Hipoalergénicos</a>
+                        <a href="#sin-crueldad-animal" class="dropdown-item">Sin Crueldad Animal</a>
+                        <a href="#empaque-sustentable" class="dropdown-item">Empaque Sustentable (PCR)</a>
+                    </div>
+                </div>
+                <a href="#productos" class="nav-link">Productos</a>
+                <div class="search-container">
+                    <input type="text" placeholder="Buscar..." class="search-input" id="search-input">
+                    <button class="search-btn" id="search-btn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <path d="m21 21-4.35-4.35"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero" id="home">
         <div class="hero-content">
             <div class="brand-logo">
-                <img src="images/imagenes:logo.png" alt="NATURE & BEAUTY Superfoods Logo" class="logo-image">
+                <img src="images/imagenes:logo.png" alt="NATURE BEAUTY Superfoods Logo" class="logo-image">
             </div>
             <div class="title-container">
-                <h1 class="hero-title">NATURE & BEAUTY</h1>
+                <h1 class="hero-title">NATURE BEAUTY</h1>
                 <div class="rabbit-illustration">
                     <img src="images/conejo.svg" alt="Conejo" class="rabbit-svg">
                 </div>
@@ -29,76 +66,184 @@
         </div>
     </section>
 
-    <!-- Image Carousel -->
-    <section class="carousel-section">
-        <div class="carousel-container">
-            <div class="carousel-slides">
-                <div class="carousel-slide active">
-                    <img src="images/hero-mandarinas.jpeg" alt="Hero Mandarinas" class="carousel-image">
-                </div>
-                <div class="carousel-slide">
-                    <img src="images/hero-vainilla.jpeg" alt="Hero Vainilla" class="carousel-image">
-                </div>
-                <div class="carousel-slide">
-                    <img src="images/hero-lavanda.jpeg" alt="Hero Lavanda" class="carousel-image">
-                </div>
-            </div>
-            <div class="carousel-dots">
-                <span class="dot active" onclick="currentSlide(1)"></span>
-                <span class="dot" onclick="currentSlide(2)"></span>
-                <span class="dot" onclick="currentSlide(3)"></span>
-            </div>
-            <div class="carousel-nav">
-                <button class="carousel-prev" onclick="changeSlide(-1)">❮</button>
-                <button class="carousel-next" onclick="changeSlide(1)">❯</button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Video Section -->
-    <section class="video-section">
-        <div class="video-container">
-            <video class="video-player" autoplay muted loop playsinline>
-                <source src="videos/loop.mov" type="video/mp4">
-                <source src="videos/loop.mov" type="video/quicktime">
-                Tu navegador no soporta la reproducción de video.
-            </video>
-        </div>
-    </section>
-
     <!-- Brand Description Section -->
-    <section class="brand-section">
+    <section class="brand-section" id="historia">
         <div class="container">
             <div class="brand-content">
                 <h2 class="section-title">Con 85% Ingredientes Naturales</h2>
                 <p class="brand-description">
-                    Nature & Beauty Superfoods esta formulada con un enfoque basado en la naturaleza. El 85% de los ingredientes provienen de fuentes naturales como extractos botánicos, aceites vegetales y otros derivados de origen vegetal. Cuidadosamente seleccionados por sus beneficios cosméticos y su compatibilidad con la piel. 
+                    Nature Beauty Superfoods esta formulada con un enfoque basado en la naturaleza. El 85% de los ingredientes provienen de fuentes naturales como extractos botánicos, aceites vegetales y otros derivados de origen vegetal. Cuidadosamente seleccionados por sus beneficios cosméticos y su compatibilidad con la piel. 
 Seguimos los lineamientos internacionales, que define cómo calcular el porcentaje de naturalidad basado en el origen y procesamiento de cada ingrediente (incluyendo el agua).
                 </p>
-                <div class="brand-features">
-                    <div class="feature">
-                        <h3>Ingredientes Naturales</h3>
-                        <p>85% ingredientes naturales en cada producto</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Sections -->
+    <!-- Ingredientes Naturales -->
+    <section class="benefit-section" id="ingredientes-naturales">
+        <div class="benefit-container">
+            <div class="benefit-content">
+                <div class="benefit-text">
+                    <h2 class="benefit-title">Ingredientes Naturales</h2>
+                    <p class="benefit-description">
+                        El 85% de nuestros ingredientes provienen de fuentes naturales como extractos botánicos, 
+                        aceites vegetales y otros derivados de origen vegetal. Cuidadosamente seleccionados por 
+                        sus beneficios cosméticos y su compatibilidad con la piel.
+                    </p>
+                    <ul class="benefit-list">
+                        <li>Extractos botánicos puros</li>
+                        <li>Aceites vegetales orgánicos</li>
+                        <li>Ingredientes de origen natural</li>
+                        <li>Sin químicos agresivos</li>
+                    </ul>
+                </div>
+                <div class="benefit-media">
+                    <div class="placeholder-video">
+                        <div class="placeholder-content">
+                            <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                                <line x1="8" y1="21" x2="16" y2="21"></line>
+                                <line x1="12" y1="17" x2="12" y2="21"></line>
+                            </svg>
+                            <p>Video: Ingredientes Naturales</p>
+                        </div>
                     </div>
-                    <div class="feature">
-                        <h3>Sin Paravenos</h3>
-                        <p>En su lugar, usamos conservantes suaves y seguros, ampliamente aceptados por normativas nacionales e internacionales.
-</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sin Parabenos -->
+    <section class="benefit-section" id="sin-parabenos">
+        <div class="benefit-container">
+            <div class="benefit-content reverse">
+                <div class="benefit-media">
+                    <div class="placeholder-video">
+                        <div class="placeholder-content">
+                            <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                                <line x1="8" y1="21" x2="16" y2="21"></line>
+                                <line x1="12" y1="17" x2="12" y2="21"></line>
+                            </svg>
+                            <p>Video: Sin Parabenos</p>
+                        </div>
                     </div>
-                    <div class="feature">
-                        <h3>Productos Hipoalergénicos</h3>
-                        <p>Nuestra fórmula ha sido desarrollada con un enfoque dermatológicamente responsable, con el objetivo de minimizar el riesgo de alergias e irritaciones. Seleccionamos cuidadosamente los ingredientes, excluyendo aquellos reconocidos como irritantes o sensibilizantes comunes.
-</p>
+                </div>
+                <div class="benefit-text">
+                    <h2 class="benefit-title">Sin Parabenos</h2>
+                    <p class="benefit-description">
+                        En lugar de parabenos, usamos conservantes suaves y seguros, ampliamente aceptados 
+                        por normativas nacionales e internacionales. Nuestros productos mantienen su 
+                        efectividad sin comprometer la salud de tu piel.
+                    </p>
+                    <ul class="benefit-list">
+                        <li>Conservantes naturales alternativos</li>
+                        <li>Seguros para uso diario</li>
+                        <li>Normativas internacionales</li>
+                        <li>Sin efectos secundarios</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Productos Hipoalergénicos -->
+    <section class="benefit-section" id="productos-hipoalergenicos">
+        <div class="benefit-container">
+            <div class="benefit-content">
+                <div class="benefit-text">
+                    <h2 class="benefit-title">Productos Hipoalergénicos</h2>
+                    <p class="benefit-description">
+                        Nuestra fórmula ha sido desarrollada con un enfoque dermatológicamente responsable, 
+                        con el objetivo de minimizar el riesgo de alergias e irritaciones. Seleccionamos 
+                        cuidadosamente los ingredientes, excluyendo aquellos reconocidos como irritantes.
+                    </p>
+                    <ul class="benefit-list">
+                        <li>Testado dermatológicamente</li>
+                        <li>Sin ingredientes irritantes</li>
+                        <li>Ideal para pieles sensibles</li>
+                        <li>Fórmula suave y segura</li>
+                    </ul>
+                </div>
+                <div class="benefit-media">
+                    <div class="placeholder-video">
+                        <div class="placeholder-content">
+                            <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                                <line x1="8" y1="21" x2="16" y2="21"></line>
+                                <line x1="12" y1="17" x2="12" y2="21"></line>
+                            </svg>
+                            <p>Video: Productos Hipoalergénicos</p>
+                        </div>
                     </div>
-                    <div class="feature">
-                        <h3>Sin Crueldad Animal</h3>
-                        <p>Estamos comprometidos con el bienestar animal. No realizamos ni encargamos pruebas en animales para ninguno de nuestros productos o ingredientes, de acuerdo con las regulaciones vigentes y los principios de la experimentación ética.
-</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sin Crueldad Animal -->
+    <section class="benefit-section" id="sin-crueldad-animal">
+        <div class="benefit-container">
+            <div class="benefit-content reverse">
+                <div class="benefit-media">
+                    <div class="placeholder-video">
+                        <div class="placeholder-content">
+                            <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                                <line x1="8" y1="21" x2="16" y2="21"></line>
+                                <line x1="12" y1="17" x2="12" y2="21"></line>
+                            </svg>
+                            <p>Video: Sin Crueldad Animal</p>
+                        </div>
                     </div>
-                    <div class="feature">
-                        <h3>Empaque Sustentable (PCR)</h3>
-                        <p>Nuestros envases están fabricados con material reciclado post-consumo (PCR), lo que significa que se  aprovechan plásticos ya utilizados para darles una nueva vida, reduciendo así el impacto ambiental del producto.
-</p>
+                </div>
+                <div class="benefit-text">
+                    <h2 class="benefit-title">Sin Crueldad Animal</h2>
+                    <p class="benefit-description">
+                        Estamos comprometidos con el bienestar animal. No realizamos ni encargamos pruebas 
+                        en animales para ninguno de nuestros productos o ingredientes, de acuerdo con las 
+                        regulaciones vigentes y los principios de la experimentación ética.
+                    </p>
+                    <ul class="benefit-list">
+                        <li>Libre de crueldad animal</li>
+                        <li>Métodos de prueba alternativos</li>
+                        <li>Compromiso ético</li>
+                        <li>Regulaciones internacionales</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Empaque Sustentable -->
+    <section class="benefit-section" id="empaque-sustentable">
+        <div class="benefit-container">
+            <div class="benefit-content">
+                <div class="benefit-text">
+                    <h2 class="benefit-title">Empaque Sustentable (PCR)</h2>
+                    <p class="benefit-description">
+                        Nuestros envases están fabricados con material reciclado post-consumo (PCR), lo que 
+                        significa que se aprovechan plásticos ya utilizados para darles una nueva vida, 
+                        reduciendo así el impacto ambiental del producto.
+                    </p>
+                    <ul class="benefit-list">
+                        <li>Material reciclado post-consumo</li>
+                        <li>Reducción de impacto ambiental</li>
+                        <li>Economía circular</li>
+                        <li>Compromiso ecológico</li>
+                    </ul>
+                </div>
+                <div class="benefit-media">
+                    <div class="placeholder-video">
+                        <div class="placeholder-content">
+                            <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                                <line x1="8" y1="21" x2="16" y2="21"></line>
+                                <line x1="12" y1="17" x2="12" y2="21"></line>
+                            </svg>
+                            <p>Video: Empaque Sustentable</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -106,7 +251,7 @@ Seguimos los lineamientos internacionales, que define cómo calcular el porcenta
     </section>
 
     <!-- Products Section -->
-    <section class="products-section">
+    <section class="products-section" id="productos">
         <!-- Moringa & Vanilla Cream -->
         <div class="product-item moringa-product">
             <div class="product-image">
@@ -189,10 +334,36 @@ Seguimos los lineamientos internacionales, que define cómo calcular el porcenta
         </div>
     </section>
 
+    <!-- Image Carousel -->
+    <section class="carousel-section">
+        <div class="carousel-container">
+            <div class="carousel-slides">
+                <div class="carousel-slide active">
+                    <img src="images/hero-mandarinas.jpeg" alt="Hero Mandarinas" class="carousel-image">
+                </div>
+                <div class="carousel-slide">
+                    <img src="images/hero-vainilla.jpeg" alt="Hero Vainilla" class="carousel-image">
+                </div>
+                <div class="carousel-slide">
+                    <img src="images/hero-lavanda.jpeg" alt="Hero Lavanda" class="carousel-image">
+                </div>
+            </div>
+            <div class="carousel-dots">
+                <span class="dot active" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
+            <div class="carousel-nav">
+                <button class="carousel-prev" onclick="changeSlide(-1)">❮</button>
+                <button class="carousel-next" onclick="changeSlide(1)">❯</button>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 Superfoods by Nature & Beauty. Todos los derechos reservados.</p>
+            <p>&copy; 2025 Superfoods by Nature Beauty. Todos los derechos reservados.</p>
         </div>
     </footer>
 

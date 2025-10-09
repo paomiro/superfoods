@@ -302,6 +302,80 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('🎨 Página de cremas cargada con efectos de scroll infinito y animaciones');
 });
 
+// Navigation Menu Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const navToggle = document.getElementById('nav-toggle');
+    const navMenu = document.getElementById('nav-menu');
+    const searchBtn = document.getElementById('search-btn');
+    const searchInput = document.getElementById('search-input');
+
+    // Mobile menu toggle
+    if (navToggle && navMenu) {
+        navToggle.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
+            navToggle.classList.toggle('active');
+        });
+
+        // Close menu when clicking on a link
+        const navLinks = document.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                navMenu.classList.remove('active');
+                navToggle.classList.remove('active');
+            });
+        });
+
+        // Close menu when clicking on dropdown items
+        const dropdownItems = document.querySelectorAll('.dropdown-item');
+        dropdownItems.forEach(item => {
+            item.addEventListener('click', function() {
+                navMenu.classList.remove('active');
+                navToggle.classList.remove('active');
+            });
+        });
+    }
+
+    // Search functionality
+    if (searchBtn && searchInput) {
+        searchBtn.addEventListener('click', function() {
+            const searchTerm = searchInput.value.trim();
+            if (searchTerm) {
+                performSearch(searchTerm);
+            }
+        });
+
+        searchInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                const searchTerm = searchInput.value.trim();
+                if (searchTerm) {
+                    performSearch(searchTerm);
+                }
+            }
+        });
+    }
+
+    function performSearch(term) {
+        // Simple search functionality - you can expand this
+        const searchableContent = document.querySelectorAll('h1, h2, h3, p, .product-title, .product-subtitle');
+        let found = false;
+        
+        searchableContent.forEach(element => {
+            if (element.textContent.toLowerCase().includes(term.toLowerCase())) {
+                element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                element.style.backgroundColor = 'rgba(212, 175, 55, 0.2)';
+                setTimeout(() => {
+                    element.style.backgroundColor = '';
+                }, 3000);
+                found = true;
+            }
+        });
+
+        if (!found) {
+            alert(`No se encontraron resultados para "${term}"`);
+        }
+    }
+});
+
 
 // Overlay de etiqueta en model-viewer (2D HUD)
 (function() {

@@ -19,20 +19,23 @@ body {
     line-height: 1.6;
     color: #333;
     overflow-x: hidden;
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    background: linear-gradient(135deg, #f8f6f0 0%, #f5f1e8 100%);
     padding-top: 70px;
+    margin: 0 3cm; /* Marco de 3cm a cada lado */
 }
 
 /* Navigation Bar */
 .navbar {
     position: fixed;
     top: 0;
-    width: 100%;
+    left: 3cm;
+    right: 3cm;
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     z-index: 1000;
     transition: all 0.3s ease;
+    border-radius: 0 0 12px 12px;
 }
 
 .nav-container {
@@ -200,12 +203,12 @@ body {
 
 /* Benefits Sections */
 .benefit-section {
-    padding: 80px 0;
-    background: white;
+    padding: 120px 0;
+    background: linear-gradient(135deg, #f8f6f0 0%, #f5f1e8 100%);
 }
 
 .benefit-section:nth-child(even) {
-    background: #f8f9fa;
+    background: linear-gradient(135deg, #f5f1e8 0%, #f8f6f0 100%);
 }
 
 .benefit-container {
@@ -216,9 +219,124 @@ body {
 
 .benefit-content {
     display: flex;
+    align-items: flex-start;
+    gap: 6rem;
+    min-height: 600px;
+    padding: 4rem 0;
+}
+
+/* Alineación específica para ingredientes naturales */
+#ingredientes-naturales .benefit-content {
     align-items: center;
-    gap: 4rem;
-    min-height: 500px;
+}
+
+/* Limitar altura del texto para que no rebase el video */
+#ingredientes-naturales .benefit-text {
+    max-height: 750px; /* Misma altura que el video */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* Nuevo diseño para Ingredientes Naturales - Caja de texto blanca */
+#ingredientes-naturales .benefit-text {
+    background: white;
+    padding: 3rem;
+    border-radius: 12px;
+    max-height: none;
+    margin: 2rem 0;
+}
+
+#ingredientes-naturales .benefit-title {
+    font-size: 2.5rem; /* Más pequeño que 3.5rem */
+    margin-bottom: 1.5rem;
+}
+
+#ingredientes-naturales .benefit-description {
+    font-size: 1.1rem; /* Más pequeño que 1.4rem */
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+/* Rabbit overlay for section titles */
+.section-title-container {
+    position: relative;
+    display: inline-block;
+}
+
+.rabbit-overlay {
+    position: absolute;
+    top: -40px;
+    right: -80px;
+    width: 180px;
+    height: 120px;
+    object-fit: contain;
+    z-index: 10;
+    opacity: 0.9;
+    transform: rotate(-15deg);
+}
+
+/* Rabbit sitting on text box for Sin Crueldad Animal */
+.benefit-text-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.rabbit-sitting {
+    position: absolute;
+    top: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 180px;
+    height: 120px;
+    object-fit: contain;
+    z-index: 15;
+    opacity: 0.9;
+}
+
+/* Rabbit horizontal for Ingredientes Naturales */
+.rabbit-horizontal {
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 180px;
+    height: 120px;
+    object-fit: contain;
+    z-index: 15;
+    opacity: 0.9;
+}
+
+/* Aplicar el mismo diseño a todas las secciones de beneficios */
+#sin-parabenos .benefit-text,
+#productos-hipoalergenicos .benefit-text,
+#sin-crueldad-animal .benefit-text,
+#empaque-sustentable .benefit-text {
+    background: white;
+    padding: 3rem;
+    border-radius: 12px;
+    max-height: none;
+    margin: 2rem 0;
+}
+
+#sin-parabenos .benefit-title,
+#productos-hipoalergenicos .benefit-title,
+#sin-crueldad-animal .benefit-title,
+#empaque-sustentable .benefit-title {
+    font-size: 2.5rem; /* Más pequeño que 3.5rem */
+    margin-bottom: 1.5rem;
+}
+
+#sin-parabenos .benefit-description,
+#productos-hipoalergenicos .benefit-description,
+#sin-crueldad-animal .benefit-description,
+#empaque-sustentable .benefit-description {
+    font-size: 1.1rem; /* Más pequeño que 1.4rem */
+    line-height: 1.6;
+    margin-bottom: 0;
 }
 
 .benefit-content.reverse {
@@ -232,17 +350,21 @@ body {
 
 .benefit-title {
     font-family: 'Aileron', 'Playfair Display', serif;
-    font-size: 2.5rem;
+    font-size: 3.5rem;
     color: #2c3e50;
-    margin-bottom: 1.5rem;
-    font-weight: 700;
+    margin-bottom: 2rem;
+    font-weight: 300;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
 }
 
 .benefit-description {
-    font-size: 1.2rem;
-    color: #666;
-    line-height: 1.8;
-    margin-bottom: 2rem;
+    font-size: 1.4rem;
+    color: #555;
+    line-height: 1.7;
+    margin-bottom: 2.5rem;
+    font-weight: 300;
+    max-width: 90%;
 }
 
 .benefit-list {
@@ -266,6 +388,20 @@ body {
     color: #2d5016;
     font-weight: bold;
     font-size: 1.2rem;
+}
+
+/* Estilos para la nueva estructura sin bullets */
+.benefit-list:not(ul) {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.benefit-item {
+    font-size: 1.1rem;
+    color: #555;
+    font-weight: 500;
+    line-height: 1.6;
 }
 
 .benefit-media {
@@ -309,6 +445,142 @@ body {
     margin: 0;
 }
 
+/* Benefit Video Styles */
+.benefit-video {
+    width: 100%;
+    max-width: 800px;
+    height: 500px;
+    border-radius: 0;
+    overflow: hidden;
+    transition: all 0.4s ease;
+}
+
+/* Imagen específica para Ingredientes Naturales - Proporción 4:5 */
+#ingredientes-naturales .benefit-image {
+    max-width: 600px;
+    height: 750px; /* 4:5 ratio (600 * 5/4 = 750) */
+    aspect-ratio: 4/5;
+    border-radius: 0;
+    overflow: hidden;
+    transition: all 0.4s ease;
+}
+
+#ingredientes-naturales .benefit-image:hover {
+    transform: scale(1.01);
+}
+
+#ingredientes-naturales .benefit-image-player {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 0;
+}
+
+/* Video específico para Sin Parabenos - Mismo tamaño que Ingredientes Naturales */
+#sin-parabenos .benefit-video {
+    max-width: 600px;
+    height: 750px; /* 4:5 ratio (600 * 5/4 = 750) */
+    aspect-ratio: 4/5;
+}
+
+/* Imagen específica para Productos Hipoalergénicos - Proporción 4:5 */
+#productos-hipoalergenicos .benefit-image {
+    max-width: 600px;
+    height: 750px; /* 4:5 ratio (600 * 5/4 = 750) */
+    aspect-ratio: 4/5;
+    border-radius: 0;
+    overflow: hidden;
+    transition: all 0.4s ease;
+}
+
+#productos-hipoalergenicos .benefit-image:hover {
+    transform: scale(1.01);
+}
+
+#productos-hipoalergenicos .benefit-image-player {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 0;
+}
+
+/* Video específico para Empaque Sustentable - Mismo tamaño que otros videos */
+#empaque-sustentable .benefit-video {
+    max-width: 600px;
+    height: 750px; /* 4:5 ratio (600 * 5/4 = 750) */
+    aspect-ratio: 4/5;
+}
+
+/* Video específico para Sin Crueldad Animal - Video de fondo completo */
+#sin-crueldad-animal {
+    position: relative;
+    overflow: hidden;
+}
+
+#sin-crueldad-animal .benefit-video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+#sin-crueldad-animal .benefit-video-bg-player {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+#sin-crueldad-animal .benefit-video-background {
+    height: 120vh; /* Altura aumentada para más largo */
+}
+
+#sin-crueldad-animal .benefit-text-below-video {
+    background: rgba(0, 0, 0, 0.4);
+    padding: 3rem 2rem;
+    text-align: center;
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    display: block;
+}
+
+#sin-crueldad-animal .benefit-text-below-video .benefit-title {
+    color: white;
+    font-size: 3.5rem;
+    margin-bottom: 2rem;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+    font-family: 'Aileron', 'Playfair Display', serif;
+    font-weight: 300;
+}
+
+#sin-crueldad-animal .benefit-text-below-video .benefit-description {
+    color: white;
+    font-size: 1.4rem;
+    line-height: 1.7;
+    margin-bottom: 0;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+    font-weight: 300;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.benefit-video:hover {
+    transform: scale(1.01);
+}
+
+.benefit-video-player {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 0;
+}
+
 /* Carousel Section */
 .carousel-section {
     width: 100%;
@@ -318,7 +590,7 @@ body {
     overflow: hidden;
     margin: 0;
     padding: 0;
-    background: #f8f9fa;
+    background: linear-gradient(135deg, #f8f6f0 0%, #f5f1e8 100%);
 }
 
 .carousel-container {
@@ -434,7 +706,7 @@ body {
 
 /* Hero Section */
 .hero {
-    height: 100vh;
+    height: 50vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -499,10 +771,12 @@ body {
 
 .hero-title {
     font-family: 'Aileron', 'Playfair Display', serif;
-    font-size: 2rem;
-    font-weight: 700;
+    font-size: 2.2rem;
+    font-weight: 300;
     color: #2c3e50;
     margin: 0;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
 }
 
 .rabbit-illustration {
@@ -546,12 +820,15 @@ body {
 }
 
 .hero-subtitle {
-    font-size: 1.5rem;
-    font-weight: 300;
-    margin-bottom: 3rem;
+    font-size: 1.8rem;
+    font-weight: 400;
+    margin-bottom: 4rem;
     opacity: 0;
     animation: fadeInUp 1s ease-out 0.8s forwards;
-    color: #666;
+    color: #555;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    font-family: 'Inter', sans-serif;
 }
 
 .scroll-indicator {
@@ -613,10 +890,89 @@ body {
     }
 }
 
+/* Video Hero Section */
+.video-hero-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.video-hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.video-hero-player {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.video-hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.video-hero-content {
+    text-align: center;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.video-hero-logo {
+    margin-bottom: 1rem;
+}
+
+.video-hero-logo .logo-image {
+    width: 120px;
+    height: auto;
+    opacity: 0.9;
+}
+
+.video-hero-title-container {
+    position: relative;
+    display: inline-block;
+}
+
+.video-hero-title {
+    font-family: 'Aileron', 'Playfair Display', serif;
+    font-size: 4.5rem;
+    font-weight: 300;
+    color: white;
+    margin: 0;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    line-height: 1.1;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 1.5s ease-out 0.5s forwards;
+}
+
 /* Brand Section */
 .brand-section {
     padding: 100px 0;
-    background: white;
+    background: linear-gradient(135deg, #f8f6f0 0%, #f5f1e8 100%);
     position: relative;
 }
 
@@ -628,12 +984,15 @@ body {
 
 .section-title {
     font-family: 'Aileron', 'Playfair Display', serif;
-    font-size: 3rem;
+    font-size: 4rem;
     color: #2c3e50;
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
     opacity: 0;
     transform: translateY(30px);
     transition: all 0.8s ease-out;
+    font-weight: 300;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
 }
 
 .section-title.visible {
@@ -705,6 +1064,7 @@ body {
 .products-section {
     position: relative;
     padding: 100px 0;
+    background: linear-gradient(135deg, #f8f6f0 0%, #f5f1e8 100%);
 }
 
 .product-item {
@@ -813,14 +1173,14 @@ body {
 
 .product-title {
     font-family: 'Aileron', 'Playfair Display', serif;
-    font-size: 3rem;
+    font-size: 2.2rem;
     color: #2c3e50;
     margin-bottom: 0.5rem;
     font-weight: 700;
 }
 
 .product-subtitle {
-    font-size: 1.3rem;
+    font-size: 1rem;
     color: #d4af37;
     margin-bottom: 1.5rem;
     font-weight: 500;
@@ -828,7 +1188,7 @@ body {
 }
 
 .product-description {
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: #666;
     margin-bottom: 2rem;
     line-height: 1.8;
@@ -836,7 +1196,7 @@ body {
 
 .product-benefits h3 {
     font-family: 'Aileron', 'Playfair Display', serif;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     color: #2c3e50;
     margin-bottom: 1rem;
 }
@@ -849,7 +1209,7 @@ body {
 .product-benefits li {
     padding: 0.5rem 0;
     color: #666;
-    font-size: 1.1rem;
+    font-size: 0.95rem;
     position: relative;
     padding-left: 2rem;
 }
@@ -896,8 +1256,8 @@ body {
 
 /* Footer */
 .footer {
-    background: #2c3e50;
-    color: white;
+    background: linear-gradient(135deg, #f8f6f0 0%, #f5f1e8 100%);
+    color: #2c3e50;
     text-align: center;
     padding: 2rem 0;
 }
@@ -905,6 +1265,15 @@ body {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    body {
+        margin: 0 1cm; /* Marco reducido en tablet */
+    }
+    
+    .navbar {
+        left: 1cm;
+        right: 1cm;
+    }
+    
     .nav-toggle {
         display: flex;
     }
@@ -925,7 +1294,7 @@ body {
     }
     
     .nav-menu.active {
-        left: 0;
+    left: 0;
     }
     
     .search-container {
@@ -972,7 +1341,7 @@ body {
     }
     
     .hero-title {
-        font-size: 1.25rem;
+        font-size: 1.2rem;
     }
     
     .rabbit-illustration {
@@ -1005,7 +1374,7 @@ body {
     }
     
     .product-title {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
     
     .section-title {
@@ -1039,15 +1408,130 @@ body {
     }
     
     .benefit-title {
-        font-size: 2.2rem;
+        font-size: 2.8rem;
     }
     
     .placeholder-video {
         height: 280px;
     }
+    
+    .benefit-video {
+        height: 400px;
+    }
+    
+    #ingredientes-naturales .benefit-image {
+        max-width: 500px;
+        height: 625px; /* 4:5 ratio para tablet */
+    }
+    
+    #ingredientes-naturales .benefit-text {
+        max-height: 625px; /* Misma altura que el video en tablet */
+        padding: 2rem;
+    }
+    
+    #ingredientes-naturales .benefit-title {
+        font-size: 2rem; /* Más pequeño para tablet */
+    }
+    
+    #ingredientes-naturales .benefit-description {
+        font-size: 1rem; /* Más pequeño para tablet */
+    }
+    
+    .rabbit-overlay {
+        width: 150px;
+        height: 100px;
+        top: -30px;
+        right: -60px;
+    }
+    
+    .rabbit-sitting {
+        width: 150px;
+        height: 100px;
+        top: -50px;
+    }
+    
+    .rabbit-horizontal {
+        width: 150px;
+        height: 100px;
+        top: -35px;
+    }
+    
+    #sin-parabenos .benefit-video {
+        max-width: 500px;
+        height: 625px; /* 4:5 ratio para tablet */
+    }
+    
+    #sin-parabenos .benefit-text {
+        max-height: 625px; /* Misma altura que el video en tablet */
+        padding: 2rem;
+    }
+    
+    #sin-parabenos .benefit-title,
+    #productos-hipoalergenicos .benefit-title,
+    #sin-crueldad-animal .benefit-title,
+    #empaque-sustentable .benefit-title {
+        font-size: 2rem; /* Más pequeño para tablet */
+    }
+    
+    #sin-parabenos .benefit-description,
+    #productos-hipoalergenicos .benefit-description,
+    #sin-crueldad-animal .benefit-description,
+    #empaque-sustentable .benefit-description {
+        font-size: 1rem; /* Más pequeño para tablet */
+    }
+    
+    #productos-hipoalergenicos .benefit-text,
+    #sin-crueldad-animal .benefit-text,
+    #empaque-sustentable .benefit-text {
+        padding: 2rem;
+    }
+    
+    #productos-hipoalergenicos .benefit-image {
+        max-width: 500px;
+        height: 625px; /* 4:5 ratio para tablet */
+    }
+    
+    #empaque-sustentable .benefit-video {
+        max-width: 500px;
+        height: 625px; /* 4:5 ratio para tablet */
+    }
+    
+    #sin-crueldad-animal .benefit-video-background {
+        height: 120vh; /* Altura aumentada en tablet */
+    }
+    
+    #sin-crueldad-animal .benefit-text-below-video {
+        padding: 2rem 1.5rem;
+    }
+    
+    #sin-crueldad-animal .benefit-text-below-video .benefit-title {
+        font-size: 2.8rem;
+    }
+    
+    #sin-crueldad-animal .benefit-text-below-video .benefit-description {
+        font-size: 1.2rem;
+        max-width: 600px;
+    }
+    
+    .video-hero-title {
+        font-size: 3rem;
+    }
+    
+    .video-hero-logo .logo-image {
+        width: 100px;
+    }
 }
 
 @media (max-width: 480px) {
+    body {
+        margin: 0 0.5cm; /* Marco mínimo en mobile */
+    }
+    
+    .navbar {
+        left: 0.5cm;
+        right: 0.5cm;
+    }
+    
     .title-container {
         gap: 10px;
     }
@@ -1071,7 +1555,7 @@ body {
     }
     
     .product-title {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
     }
     
     .video-section {
@@ -1103,7 +1587,7 @@ body {
     }
     
     .benefit-title {
-        font-size: 2rem;
+        font-size: 2.2rem;
     }
     
     .benefit-description {
@@ -1112,6 +1596,112 @@ body {
     
     .placeholder-video {
         height: 250px;
+    }
+    
+    .benefit-video {
+        height: 350px;
+    }
+    
+    #ingredientes-naturales .benefit-image {
+        max-width: 400px;
+        height: 500px; /* 4:5 ratio para mobile */
+    }
+    
+    #ingredientes-naturales .benefit-text {
+        max-height: 500px; /* Misma altura que el video en mobile */
+        padding: 1.5rem;
+    }
+    
+    #ingredientes-naturales .benefit-title {
+        font-size: 1.8rem; /* Más pequeño para mobile */
+    }
+    
+    #ingredientes-naturales .benefit-description {
+        font-size: 0.95rem; /* Más pequeño para mobile */
+    }
+    
+    .rabbit-overlay {
+        width: 120px;
+        height: 80px;
+        top: -20px;
+        right: -40px;
+    }
+    
+    .rabbit-sitting {
+        width: 120px;
+        height: 80px;
+        top: -40px;
+    }
+    
+    .rabbit-horizontal {
+        width: 120px;
+        height: 80px;
+        top: -30px;
+    }
+    
+    #sin-parabenos .benefit-video {
+        max-width: 400px;
+        height: 500px; /* 4:5 ratio para mobile */
+    }
+    
+    #sin-parabenos .benefit-text {
+        max-height: 500px; /* Misma altura que el video en mobile */
+        padding: 1.5rem;
+    }
+    
+    #sin-parabenos .benefit-title,
+    #productos-hipoalergenicos .benefit-title,
+    #sin-crueldad-animal .benefit-title,
+    #empaque-sustentable .benefit-title {
+        font-size: 1.8rem; /* Más pequeño para mobile */
+    }
+    
+    #sin-parabenos .benefit-description,
+    #productos-hipoalergenicos .benefit-description,
+    #sin-crueldad-animal .benefit-description,
+    #empaque-sustentable .benefit-description {
+        font-size: 0.95rem; /* Más pequeño para mobile */
+    }
+    
+    #productos-hipoalergenicos .benefit-text,
+    #sin-crueldad-animal .benefit-text,
+    #empaque-sustentable .benefit-text {
+        padding: 1.5rem;
+    }
+    
+    #productos-hipoalergenicos .benefit-image {
+        max-width: 400px;
+        height: 500px; /* 4:5 ratio para mobile */
+    }
+    
+    #empaque-sustentable .benefit-video {
+        max-width: 400px;
+        height: 500px; /* 4:5 ratio para mobile */
+    }
+    
+    #sin-crueldad-animal .benefit-video-background {
+        height: 120vh; /* Altura aumentada en mobile */
+    }
+    
+    #sin-crueldad-animal .benefit-text-below-video {
+        padding: 1.5rem 1rem;
+    }
+    
+    #sin-crueldad-animal .benefit-text-below-video .benefit-title {
+        font-size: 2.2rem;
+    }
+    
+    #sin-crueldad-animal .benefit-text-below-video .benefit-description {
+        font-size: 1rem;
+        max-width: 400px;
+    }
+    
+    .video-hero-title {
+        font-size: 2.2rem;
+    }
+    
+    .video-hero-logo .logo-image {
+        width: 80px;
     }
 }
 

@@ -12,9 +12,9 @@
     <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="nav-container">
-            <div class="nav-logo">
-                <a href="#home">Superfoods</a>
-            </div>
+                <div class="nav-logo">
+                    <a href="#video-hero">Superfoods</a>
+                </div>
             <div class="nav-menu" id="nav-menu">
                 <a href="#historia" class="nav-link">Historia</a>
                 <div class="dropdown">
@@ -27,7 +27,14 @@
                         <a href="#empaque-sustentable" class="dropdown-item">Empaque Sustentable (PCR)</a>
                     </div>
                 </div>
-                <a href="#productos" class="nav-link">Productos</a>
+                <div class="dropdown">
+                    <a href="#productos" class="nav-link dropdown-toggle">Productos</a>
+                    <div class="dropdown-menu">
+                        <a href="#detox-profundo" class="dropdown-item">Detox Profundo</a>
+                        <a href="#boost-antioxidante" class="dropdown-item">Un Boost Antioxidante</a>
+                        <a href="#shot-hidratante" class="dropdown-item">Un Shot Hidratante</a>
+                    </div>
+                </div>
                 <div class="search-container">
                     <input type="text" placeholder="Buscar..." class="search-input" id="search-input">
                     <button class="search-btn" id="search-btn">
@@ -46,22 +53,22 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="hero-content">
-            <div class="brand-logo">
-                <img src="images/imagenes:logo.png" alt="NATURE BEAUTY Superfoods Logo" class="logo-image">
-            </div>
-            <div class="title-container">
-                <h1 class="hero-title">NATURE BEAUTY</h1>
-                <div class="rabbit-illustration">
-                    <img src="images/conejo.svg" alt="Conejo" class="rabbit-svg">
+
+    <!-- Video Hero Section -->
+    <section class="video-hero-section" id="video-hero">
+        <div class="video-hero-background">
+            <video class="video-hero-player" autoplay muted loop playsinline>
+                <source src="videos/LavandaBeauty.mp4" type="video/mp4">
+                <source src="videos/LavandaBeauty.mov" type="video/quicktime">
+                Tu navegador no soporta la reproducción de video.
+            </video>
+        </div>
+        <div class="video-hero-overlay">
+            <div class="video-hero-content">
+                <div class="video-hero-logo">
+                    <img src="images/imagenes:logo.png" alt="NATURE BEAUTY Superfoods Logo" class="logo-image">
                 </div>
-            </div>
-            <p class="hero-subtitle">Alimento para tu piel</p>
-            <div class="scroll-indicator">
-                <span>Desliza para explorar</span>
-                <div class="scroll-arrow"></div>
+                <h2 class="video-hero-title">ALIMENTO PARA TU PIEL</h2>
             </div>
         </div>
     </section>
@@ -72,7 +79,7 @@
             <div class="brand-content">
                 <h2 class="section-title">Con 85% Ingredientes Naturales</h2>
                 <p class="brand-description">
-                    Nature Beauty Superfoods esta formulada con un enfoque basado en la naturaleza. El 85% de los ingredientes provienen de fuentes naturales como extractos botánicos, aceites vegetales y otros derivados de origen vegetal. Cuidadosamente seleccionados por sus beneficios cosméticos y su compatibilidad con la piel. 
+                    Nature Beauty Superfoods esta formulada con un enfoque basado en la naturaleza. El 85% de los ingredientes provienen de fuentes naturales como extractos botánicos, aceites vegetales y otros derivados de origen vegetal. Cuidadosamente seleccionados por sus beneficios cosméticos y su compatibilidad con la piel. 
 Seguimos los lineamientos internacionales, que define cómo calcular el porcentaje de naturalidad basado en el origen y procesamiento de cada ingrediente (incluyendo el agua).
                 </p>
             </div>
@@ -84,30 +91,20 @@ Seguimos los lineamientos internacionales, que define cómo calcular el porcenta
     <section class="benefit-section" id="ingredientes-naturales">
         <div class="benefit-container">
             <div class="benefit-content">
-                <div class="benefit-text">
-                    <h2 class="benefit-title">Ingredientes Naturales</h2>
-                    <p class="benefit-description">
-                        El 85% de nuestros ingredientes provienen de fuentes naturales como extractos botánicos, 
-                        aceites vegetales y otros derivados de origen vegetal. Cuidadosamente seleccionados por 
-                        sus beneficios cosméticos y su compatibilidad con la piel.
-                    </p>
-                    <ul class="benefit-list">
-                        <li>Extractos botánicos puros</li>
-                        <li>Aceites vegetales orgánicos</li>
-                        <li>Ingredientes de origen natural</li>
-                        <li>Sin químicos agresivos</li>
-                    </ul>
+                <div class="benefit-text-container">
+                    <img src="images/conejo1.png" alt="Conejo acostado" class="rabbit-horizontal">
+                    <div class="benefit-text">
+                        <h2 class="benefit-title">Ingredientes Naturales</h2>
+                        <p class="benefit-description">
+                            El 85% de nuestros ingredientes provienen de fuentes naturales como extractos botánicos, 
+                            aceites vegetales y otros derivados de origen vegetal. Cuidadosamente seleccionados por 
+                            sus beneficios cosméticos y su compatibilidad con la piel.
+                        </p>
+                    </div>
                 </div>
                 <div class="benefit-media">
-                    <div class="placeholder-video">
-                        <div class="placeholder-content">
-                            <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
-                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
-                                <line x1="8" y1="21" x2="16" y2="21"></line>
-                                <line x1="12" y1="17" x2="12" y2="21"></line>
-                            </svg>
-                            <p>Video: Ingredientes Naturales</p>
-                        </div>
+                    <div class="benefit-image">
+                        <img src="images/naranjas.png" alt="Naranjas - Ingredientes Naturales" class="benefit-image-player">
                     </div>
                 </div>
             </div>
@@ -119,30 +116,24 @@ Seguimos los lineamientos internacionales, que define cómo calcular el porcenta
         <div class="benefit-container">
             <div class="benefit-content reverse">
                 <div class="benefit-media">
-                    <div class="placeholder-video">
-                        <div class="placeholder-content">
-                            <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
-                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
-                                <line x1="8" y1="21" x2="16" y2="21"></line>
-                                <line x1="12" y1="17" x2="12" y2="21"></line>
-                            </svg>
-                            <p>Video: Sin Parabenos</p>
-                        </div>
+                    <div class="benefit-video">
+                        <video class="benefit-video-player" autoplay muted loop playsinline>
+                            <source src="videos/PARABENOS.mp4" type="video/mp4">
+                            <source src="videos/PARABENOS.mov" type="video/quicktime">
+                            Tu navegador no soporta la reproducción de video.
+                        </video>
                     </div>
                 </div>
-                <div class="benefit-text">
-                    <h2 class="benefit-title">Sin Parabenos</h2>
-                    <p class="benefit-description">
-                        En lugar de parabenos, usamos conservantes suaves y seguros, ampliamente aceptados 
-                        por normativas nacionales e internacionales. Nuestros productos mantienen su 
-                        efectividad sin comprometer la salud de tu piel.
-                    </p>
-                    <ul class="benefit-list">
-                        <li>Conservantes naturales alternativos</li>
-                        <li>Seguros para uso diario</li>
-                        <li>Normativas internacionales</li>
-                        <li>Sin efectos secundarios</li>
-                    </ul>
+                <div class="benefit-text-container">
+                    <img src="images/conejo2.png" alt="Conejo sentado" class="rabbit-sitting">
+                    <div class="benefit-text">
+                        <h2 class="benefit-title">Sin Parabenos</h2>
+                        <p class="benefit-description">
+                            En lugar de parabenos, usamos conservantes suaves y seguros, ampliamente aceptados 
+                            por normativas nacionales e internacionales. Nuestros productos mantienen su 
+                            efectividad sin comprometer la salud de tu piel.
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -159,23 +150,10 @@ Seguimos los lineamientos internacionales, que define cómo calcular el porcenta
                         con el objetivo de minimizar el riesgo de alergias e irritaciones. Seleccionamos 
                         cuidadosamente los ingredientes, excluyendo aquellos reconocidos como irritantes.
                     </p>
-                    <ul class="benefit-list">
-                        <li>Testado dermatológicamente</li>
-                        <li>Sin ingredientes irritantes</li>
-                        <li>Ideal para pieles sensibles</li>
-                        <li>Fórmula suave y segura</li>
-                    </ul>
                 </div>
                 <div class="benefit-media">
-                    <div class="placeholder-video">
-                        <div class="placeholder-content">
-                            <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
-                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
-                                <line x1="8" y1="21" x2="16" y2="21"></line>
-                                <line x1="12" y1="17" x2="12" y2="21"></line>
-                            </svg>
-                            <p>Video: Productos Hipoalergénicos</p>
-                        </div>
+                    <div class="benefit-image">
+                        <img src="images/hipoalargenicos.jpg" alt="Hipoalergénicos - Productos Hipoalergénicos" class="benefit-image-player">
                     </div>
                 </div>
             </div>
@@ -184,66 +162,45 @@ Seguimos los lineamientos internacionales, que define cómo calcular el porcenta
 
     <!-- Sin Crueldad Animal -->
     <section class="benefit-section" id="sin-crueldad-animal">
-        <div class="benefit-container">
-            <div class="benefit-content reverse">
-                <div class="benefit-media">
-                    <div class="placeholder-video">
-                        <div class="placeholder-content">
-                            <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
-                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
-                                <line x1="8" y1="21" x2="16" y2="21"></line>
-                                <line x1="12" y1="17" x2="12" y2="21"></line>
-                            </svg>
-                            <p>Video: Sin Crueldad Animal</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="benefit-text">
-                    <h2 class="benefit-title">Sin Crueldad Animal</h2>
-                    <p class="benefit-description">
-                        Estamos comprometidos con el bienestar animal. No realizamos ni encargamos pruebas 
-                        en animales para ninguno de nuestros productos o ingredientes, de acuerdo con las 
-                        regulaciones vigentes y los principios de la experimentación ética.
-                    </p>
-                    <ul class="benefit-list">
-                        <li>Libre de crueldad animal</li>
-                        <li>Métodos de prueba alternativos</li>
-                        <li>Compromiso ético</li>
-                        <li>Regulaciones internacionales</li>
-                    </ul>
-                </div>
-            </div>
+        <div class="benefit-video-background">
+            <video class="benefit-video-bg-player" autoplay muted loop playsinline>
+                <source src="videos/conejos.mp4" type="video/mp4">
+                <source src="videos/conejos.mov" type="video/quicktime">
+                Tu navegador no soporta la reproducción de video.
+            </video>
+        </div>
+        <div class="benefit-text-below-video">
+            <h2 class="benefit-title">Sin Crueldad Animal</h2>
+            <p class="benefit-description">
+                Estamos comprometidos con el bienestar animal. No realizamos ni encargamos pruebas 
+                en animales para ninguno de nuestros productos o ingredientes, de acuerdo con las 
+                regulaciones vigentes y los principios de la experimentación ética.
+            </p>
         </div>
     </section>
 
     <!-- Empaque Sustentable -->
     <section class="benefit-section" id="empaque-sustentable">
         <div class="benefit-container">
-            <div class="benefit-content">
-                <div class="benefit-text">
-                    <h2 class="benefit-title">Empaque Sustentable (PCR)</h2>
-                    <p class="benefit-description">
-                        Nuestros envases están fabricados con material reciclado post-consumo (PCR), lo que 
-                        significa que se aprovechan plásticos ya utilizados para darles una nueva vida, 
-                        reduciendo así el impacto ambiental del producto.
-                    </p>
-                    <ul class="benefit-list">
-                        <li>Material reciclado post-consumo</li>
-                        <li>Reducción de impacto ambiental</li>
-                        <li>Economía circular</li>
-                        <li>Compromiso ecológico</li>
-                    </ul>
-                </div>
+            <div class="benefit-content reverse">
                 <div class="benefit-media">
-                    <div class="placeholder-video">
-                        <div class="placeholder-content">
-                            <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
-                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
-                                <line x1="8" y1="21" x2="16" y2="21"></line>
-                                <line x1="12" y1="17" x2="12" y2="21"></line>
-                            </svg>
-                            <p>Video: Empaque Sustentable</p>
-                        </div>
+                    <div class="benefit-video">
+                        <video class="benefit-video-player" autoplay muted loop playsinline>
+                            <source src="videos/reciclado.mp4" type="video/mp4">
+                            <source src="videos/reciclado.mov" type="video/quicktime">
+                            Tu navegador no soporta la reproducción de video.
+                        </video>
+                    </div>
+                </div>
+                <div class="benefit-text-container">
+                    <img src="images/conejo3.png" alt="Conejo sentado" class="rabbit-sitting">
+                    <div class="benefit-text">
+                        <h2 class="benefit-title">Empaque Sustentable (PCR)</h2>
+                        <p class="benefit-description">
+                            Nuestros envases están fabricados con material reciclado post-consumo (PCR), lo que 
+                            significa que se aprovechan plásticos ya utilizados para darles una nueva vida, 
+                            reduciendo así el impacto ambiental del producto.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -253,7 +210,7 @@ Seguimos los lineamientos internacionales, que define cómo calcular el porcenta
     <!-- Products Section -->
     <section class="products-section" id="productos">
         <!-- Moringa & Vanilla Cream -->
-        <div class="product-item moringa-product">
+        <div class="product-item moringa-product" id="detox-profundo">
             <div class="product-image">
                 <div class="product-bottle moringa-bottle">
                     <img src="images/moringa-vainilla.png" alt="PURIZING DETOX - Moringa y Vainilla Mexicana" class="bottle-image">
@@ -280,7 +237,7 @@ Seguimos los lineamientos internacionales, que define cómo calcular el porcenta
         </div>
 
         <!-- Ginseng & Lavender Cream -->
-        <div class="product-item ginseng-product">
+        <div class="product-item ginseng-product" id="boost-antioxidante">
             <div class="product-image">
                 <div class="product-bottle ginseng-bottle">
                     <img src="images/ginseng-lavanda.png" alt="ANTIOXIDANT BOOST - Ginseng y Lavanda Francesa" class="bottle-image">
@@ -307,7 +264,7 @@ Seguimos los lineamientos internacionales, que define cómo calcular el porcenta
         </div>
 
         <!-- Goji & Tangerine Cream -->
-        <div class="product-item goji-product">
+        <div class="product-item goji-product" id="shot-hidratante">
             <div class="product-image">
                 <div class="product-bottle goji-bottle">
                     <img src="images/goji-mandarina.png" alt="HYDRATING SHOT - Bayas de Goji y Mandarina Española" class="bottle-image">
@@ -375,4 +332,3 @@ Seguimos los lineamientos internacionales, que define cómo calcular el porcenta
     <script src="js/script.js"></script>
 </body>
 </html>
-lo que 
